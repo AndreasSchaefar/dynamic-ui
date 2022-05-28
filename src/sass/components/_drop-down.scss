@@ -1,0 +1,65 @@
+@use '../variables/vars';
+
+.dropdown {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+    width: 220px;
+    height: fit-content;
+    border-radius: vars.$border-radius;
+
+    .options {
+        list-style: none;
+        display: none;
+        margin: 0;
+        padding: 0;
+        &.active {
+            display: inherit;
+            flex-direction: column;
+        }
+
+        .option {
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            &.selected {
+                background-color: rgba($color: #333, $alpha: 0.1);
+            }
+
+            &:last-child {
+                border-bottom-right-radius: vars.$border-radius;
+                border-bottom-left-radius: vars.$border-radius;
+            }
+
+            &:hover {
+                background-color: rgba($color: #333, $alpha: 0.1);
+            }
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0.7rem;
+        right: 10px;
+        z-index: 1;
+        width: 10px;
+        height: 10px;
+        border: 2px solid #333;
+        border-right: 1px solid transparent;
+        border-top: 1px solid transparent;
+        transform: rotate(-45deg);
+        transition: 0.5s;
+        pointer-events: none;
+    }
+
+    .label {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin: 10px;
+    }
+}

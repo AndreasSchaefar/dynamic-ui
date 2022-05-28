@@ -1,0 +1,9 @@
+@use './base/reset';
+@use './components/drop-down';
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: aliceblue;
+}
